@@ -5,10 +5,11 @@ console log the 3rd index element
 change the value of the 2nd index element to jambura
 console log the final array */
 
-
-
-
-
+let fruits = ["mango", "banana", "jackfruits", "painapple", "lichi"];
+console.log(fruits[2]);
+console.log(fruits);
+fruits[2]="jambura";
+console.log(fruits);
 
 
  /* 2. Add or remove elements
@@ -18,13 +19,12 @@ Add two more to your array
 Remove the last tourist destination you have added
 display the final array as output */
 
-
-
-
-
-
-
-
+let places = ["sajek", "bandarban", "sondarban"];
+console.log("Places: ",places);
+places.push("kataban","jhawban");
+console.log(places);
+places.pop();
+console.log(places);
 
 
 /* 3. Checking Array Membership with ‘includes’
