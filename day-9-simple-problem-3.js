@@ -130,18 +130,18 @@ console.log(expensivePhone);
 // shopping cart:
 
 let cart = [
-    {name: "shampoo", price: 300, quantity: 3},
-    {name: "oil", price: 400, quantity: 6},
-    {name: "jainga", price: 500, quantity: 7},
-    {name: "tshirt", price: 600, quantity: 4},
-    {name: "shoe", price: 800, quantity: 1},
-    {name: "pant", price: 700, quantity: 5},
-    {name: "shirt", price: 900, quantity: 2}
+    { name: "shampoo", price: 300, quantity: 3 },
+    { name: "oil", price: 400, quantity: 6 },
+    { name: "jainga", price: 500, quantity: 7 },
+    { name: "tshirt", price: 600, quantity: 4 },
+    { name: "shoe", price: 800, quantity: 1 },
+    { name: "pant", price: 700, quantity: 5 },
+    { name: "shirt", price: 900, quantity: 2 }
 ];
 
-function getShoppingTotal(cart){
+function getShoppingTotal(cart) {
     let total = 0;
-    for(let item of cart){
+    for (let item of cart) {
         let singleItemTotal = item.price * item.quantity;
         total = total + singleItemTotal;
     }
@@ -149,51 +149,51 @@ function getShoppingTotal(cart){
 }
 
 const total = getShoppingTotal(cart);
-console.log("total shopping cost: ",total);
+console.log("total shopping cost: ", total);
 
 
 // simple discount:
 
-function getDiscount(quantity){
+function getDiscount(quantity) {
     let first100 = 100;
     let second200 = 90;
     let thirdMore = 80;
-    if(quantity <= 100){
+    if (quantity <= 100) {
         let totalPrice = first100 * quantity;
         return totalPrice;
     }
-    else if(quantity <= 200){
+    else if (quantity <= 200) {
         let toalPrice = second200 * quantity;
         return toalPrice;
     }
-    else{
+    else {
         let totalPrice = thirdMore * quantity;
         return totalPrice;
     }
 }
 
 let discountAmount = getDiscount(150);
-console.log("You will get discount: ",discountAmount, "Taka");
+console.log("You will get discount: ", discountAmount, "Taka");
 
 
 // layer discount:
-function getLayerDiscount(quantity){
+function getLayerDiscount(quantity) {
     let first100 = 100;
     let second101To200 = 90;
-    let third201ToMore =70;
+    let third201ToMore = 70;
 
-    if(quantity <= 100){
+    if (quantity <= 100) {
         let totalPrice = first100 * quantity;
         return totalPrice;
     }
-    else if(quantity <= 200){
-        let remaining = quantity -100;
+    else if (quantity <= 200) {
+        let remaining = quantity - 100;
         let first100Price = first100 * 100;
         const remainingPrice = remaining * second101To200;
         const totalPrice = first100Price + remainingPrice;
         return totalPrice;
     }
-    else{
+    else {
         let remaining = quantity - 200;
         let first100Price = first100 * 100;
         let second101To200Price = second101To200 * 100;
@@ -207,10 +207,47 @@ function getLayerDiscount(quantity){
 const layerDiscount = getLayerDiscount(250);
 console.log(layerDiscount);
 
+// simple Calculator:
 
+function add(num1, num2) {
+    return num1 + num2;
+}
+function subs(num1, num2) {
+    if (num1 > num2) {
+        return num1 - num2;
+    }
+    return num2 - num1;
+}
+function multi(num1, num2) {
+    return num1 * num2;
+}
+function devide(num1, num2) {
+    if (num1 > num2) {
+        return num1 / num2;
+    }
+    return num2 / num1;
+}
 
+function calculation(a, b, oparation) {
+    if (oparation === "add") {
+        return add(a, b);
+    }
+    else if (oparation === "subs") {
+        return subs(a, b);
+    }
+    else if (oparation === "multi") {
+        return multi(a, b);
+    }
+    else if( oparation === "devide"){
+        return devide(a, b);
+    }
+    else{
+        return "invalid oparation";
+    }
+}
 
-
+const result = calculation(12, 8, "add");
+console.log("result from Calculator: ", result);
 
 
 
