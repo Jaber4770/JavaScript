@@ -11,11 +11,6 @@ function calculateVAT(price) {
 
 }
 
-console.log("Total Vat: ", calculateVAT(100));
-
-
-
-
 
 
 function validContact(contact) {
@@ -36,9 +31,6 @@ function validContact(contact) {
     return false;
 
 }
-
-console.log("valid contact: ", validContact(true));
-
 
 
 
@@ -69,14 +61,9 @@ function willSuccess(marks) {
 }
 
 
-console.log("will he get passed: ", willSuccess(true));
-
-
-
-
 
 function validProposal(person1, person2) {
-    if(arguments.length !== 2){
+    if (arguments.length !== 2) {
         return "Invalid";
     }
     if ((typeof (person1) === "object" && person1 !== null && Array.isArray(person1) === false) &&
@@ -105,27 +92,30 @@ function validProposal(person1, person2) {
 }
 
 
-// let person1 = "Mizan", { name: "mitu", gender: "male", age: 32 };
-// let person2 = { name: "mitu", gender: "male", age: 32 }, "Mizan";
 
-console.log("Proposal: ", validProposal("Mizan", { name: "mitu", gender: "male", age: 32 }, { name: "mitu", gender: "male", age: 32 }, "Mizan"));
+function calculateSleepTime(times) {
 
+    let totalSecond = 0;
+    if (Array.isArray(times)) {
+        for (let time of times) {
+            if (typeof (time) === "number") {
+                totalSecond += time;
+            }
+            else {
+                return "Invalid";
+            }
+        }
+        let hours = Math.floor(totalSecond / 3600);
+        let minutes = parseInt(Math.floor(totalSecond % 3600) / 60);
+        let seconds = totalSecond % 60;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return {
+            hour: hours,
+            minute: minutes,
+            second: seconds
+        };
+    }
+    else {
+        return "Invalid";
+    }
+}
