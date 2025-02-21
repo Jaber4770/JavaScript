@@ -1,10 +1,11 @@
 function findMatchedProduct(products, search){
     let matchedProduct = [];
     for(let product of products){
-        if(product.name.includes(search)){
+        if(product.name.toLowerCase().includes(search.toLowerCase())){
             matchedProduct.push(product);
         }
     }
+    return matchedProduct;
 }
 
 
@@ -30,7 +31,7 @@ const products = [
     { name: "MSI Stealth 14 Studio Laptop", price: 2300, color: "Star Blue", model: "A13VF" },
     { name: "Samsung Galaxy Book3 Ultra Laptop", price: 2400, color: "Graphite", model: "NT960XG7K" }
 ];
-const search = "phone";
+const search = "LapTop";
 console.log("Matched products: ", findMatchedProduct(products, search));
 
 
